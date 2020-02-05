@@ -65,7 +65,7 @@ namespace Business_Layer
 
         public IBooking GetBookings(int bookingNr)
         {
-            return bookings.Where(x => x.BookingNr == bookingNr).FirstOrDefault();
+            
         }
     }
 
