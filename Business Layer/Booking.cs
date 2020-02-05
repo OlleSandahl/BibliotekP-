@@ -10,14 +10,24 @@ namespace Business_Layer
 {
     public class Booking : IBooking
     {
-        public string BookingNr { get; set; }
+        public int BookingNr { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime ReturnDate { get; set; }
+        public IBook Isbn { get; set; }
+        public IList<IBook> Books { get; set; }
+        public ILibrarian LibNr { get; set; }
+        public IMember MemberNr { get; set; }
 
-
-        public Booking (int bookingNr, DateTime startDate)
+        public bool BookingCompleted { get; set; }
+        public Booking(int bookingNr, IList<IBook> books, ILibrarian libNr, IMember memberNr, DateTime startDate)
         {
+            BookingNr = bookingNr;
+            Books = books;
+            LibNr = libNr;
+            MemberNr = memberNr;
+            StartDate = startDate;
 
+            BookingCompleted = false;
         }
     }
 }
