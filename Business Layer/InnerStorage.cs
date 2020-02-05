@@ -63,10 +63,7 @@ namespace Business_Layer
             return new List<IBooking>(bookings);
         }
 
-        public IBooking GetBookings(int bookingNr)
-        {
-            
-        }
+        
     }
 
 

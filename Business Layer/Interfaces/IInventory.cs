@@ -17,7 +17,7 @@ namespace Business_Layer.Interfaces
         IMember GetMemberNr(int memberNr);
         IBook GetBookWithIsbn(int isbn);
         IList<IBook> GetAvailabeBooks();
-        IList<IBook> GetBookedBooks(int bookingNr);
+        IList<IBook> GetReservedBooks(int bookingNr);
         IBooking ReservBook(IList<IBook> books, ILibrarian librarian, IMember member);
         IInvoice ReturnBook(int bookingNr);
         IBook GetBookFromISBN(int isbn);
