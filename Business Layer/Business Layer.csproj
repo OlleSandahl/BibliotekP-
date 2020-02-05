@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="Booking.cs" />
+    <Compile Include="Library.cs" />
+    <Compile Include="Interfaces\ILogIn.cs" />
+    <Compile Include="LogIn.cs" />
     <Compile Include="DataStore.cs" />
     <Compile Include="Enums\EntityState.cs" />
     <Compile Include="Enums\InventoryType.cs" />
