@@ -12,9 +12,9 @@ using ConsolePresentation.states;
 
 namespace ConsolePresentation.states
 {
-    public class MainMenu
+    public class MainMenu : IState
     {
-        public void ShowMenu
+        public void ShowMenu(IStateContext context)
         {
             Console.Clear();
             Console.WriteLine("MainMenu\n");
@@ -29,7 +29,21 @@ namespace ConsolePresentation.states
             
             switch (choice)
             {
-            case
-        }
+                case 1:
+                    context.SetState(new ReserveBookState());
+                    break;
+                case 2:
+                    context.SetState(new ÅterlämnaBokState());
+                    break;
+                case 3:
+                    context.SetState(new TaBortBokningState());
+                    break;
+                case 4:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    context.SetState(new HuvudMenyState());
+                    break;
+            }
     }
 }

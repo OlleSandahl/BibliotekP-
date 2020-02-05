@@ -9,7 +9,7 @@ using ConsolePresentation;
 
 namespace ConsolePresentation
 {
-    interface IStateContext
+    public interface IStateContext
     {
         ILibrary Library { get; set; }
         ILogIn logIn { get; set; }

@@ -25,7 +25,7 @@ namespace ConsolePresentation
                {"InventoryType", ConfigurationManager.AppSettings["InventoryType"] },
                {"FolderPath", ConfigurationManager.AppSettings["FolderPath"] }
 
-           } );
+           });
             SetState(new LogInState());
         }
         public void SetState(IState state)
