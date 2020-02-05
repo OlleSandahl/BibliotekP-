@@ -99,7 +99,7 @@ namespace Business_Layer
         }
         public IList<IBook> GetReservedBooks(int bookingNr)
         {
-            ReservedBooks = inventory.GetBooking(bookingNr);
+            ReservedBooks = inventory.GetBookedBooks(bookingNr);
             foreach (IBook book in ReservedBooks)
             {
                 if (!books.Contains(book))
@@ -109,7 +109,7 @@ namespace Business_Layer
         }
         public IBook GetBookFromISBN(int isbn)
         {
-            return inventory.GetBookFromISBN(isbn);
+            return inventory.GetBookByIsbn(isbn);
         }
 
 

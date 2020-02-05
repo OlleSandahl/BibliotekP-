@@ -56,6 +56,8 @@ namespace ConsolePresentation.states
             Console.WriteLine();
 
             context.SetState(new MainMenu());
+
+            
         }
     }
 }
