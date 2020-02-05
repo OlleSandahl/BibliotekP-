@@ -22,8 +22,16 @@ namespace ConsolePresentation.states
                 Console.Clear();
                 Console.WriteLine("Library Log-In/n");
 
+                int libNr;
+                Console.Write("LibrarienNr: ");
+                int.TryParse(Console.ReadLine(), out libNr);
 
+                Console.WriteLine("Password: ");
+                string password = Console.ReadLine();
+
+                context.logIn = context.Library.LogingIn(libNr, password);
             }
+            context.SetState(new MainMenu());
         }
     }
 }
