@@ -48,13 +48,13 @@
     <Compile Include="Enums\EntityState.cs" />
     <Compile Include="Enums\InventoryType.cs" />
     <Compile Include="Exceptions\IncorrectStorage.cs" />
+    <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="Interfaces\IBooking.cs" />
     <Compile Include="InnerStorage.cs" />
     <Compile Include="Interfaces\IInvoice.cs" />
     <Compile Include="Interfaces\IMember.cs" />
     <Compile Include="Interfaces\ILibrarian.cs" />
     <Compile Include="Interfaces\IBook.cs" />
-    <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="Interfaces\IDataStore.cs" />
     <Compile Include="InventoryFactory.cs" />
     <Compile Include="Invoice.cs" />

@@ -10,7 +10,7 @@ using Business_Layer.Interfaces;
 
 namespace Business_Layer
 {
-    class InnerStorage
+    public class InnerStorage : IInventory
     {
         private IList<ILibrarian> librariens;
         private IList<IMember> members;
@@ -18,7 +18,7 @@ namespace Business_Layer
         public IList<IBooking> bookings;
         private IList<IInvoice> invoices;
 
-        public InnerStorage (IDictionary<string, string> settings)
+        public InnerStorage(IDictionary<string, string> settings)
         {
             librariens = new List<ILibrarian>()
             {
@@ -40,7 +40,7 @@ namespace Business_Layer
 
             bookings = new List<IBooking>();
             invoices = new List<IInvoice>();
-                              
+
         }
 
         public IList<ILibrarian> GetLibrarians()

@@ -1,5 +1,6 @@
-﻿using System;
+﻿using Business_Layer.Interfaces;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,23 +10,22 @@ namespace Business_Layer.Interfaces
 {
     public interface IInventory
     {
-        IList<ILibrarian> GetLibrarians();
-        IList<IMember> GetMembers();
-        IList<IBook> GetBooks();
+        IList<IBook> GetAvailableBooks();
+        IBook GetBookByIsbn(int isbn);
+        IList<IBook> GetBookedBooks(int bookingNr);
+        IBooking GetBooking(int bookingNr);
         IList<IBooking> GetBookings();
-        IList<IInvoice> GetInvoices();
+        IBooking GetBookings(int bookingNr);
+        IBook GetBookIsbn(int isbn);
+        IList<IBook> GetBooks();
+        IList<IInvoice> GetInvoice();
+        ILibrarian GetLibNr(int libNr);
+        IList<ILibrarian> GetLibrarians();
         IMember GetMemberNr(int memberNr);
-        IBook GetBookWithIsbn(int isbn);
-        IList<IBook> GetAvailabeBooks();
-        IList<IBook> GetReservedBooks(int bookingNr);
-        IBooking ReservBook(IList<IBook> books, ILibrarian librarian, IMember member);
+        IList<IMember> GetMembers();
+        void RemoveBooking(int bookingNr);
+        IBooking ReserveBook(IList<IBook> books, ILibrarian libNr, IMember memberNr);
         IInvoice ReturnBook(int bookingNr);
-        IBook GetBookFromISBN(int isbn);
-        
-
-
-
-
-
     }
+
 }
