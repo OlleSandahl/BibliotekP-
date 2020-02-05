@@ -18,7 +18,7 @@ namespace ConsolePresentation.states
         public void ShowMenu(IStateContext context)
         {
             Console.Clear();
-            Console.WriteLine("Booking Book Menu \n");
+            Console.WriteLine("Booking Book Menu");
 
             IList<IBook> availableBooks = context.Library.GetAvailabeBooks();
             foreach (IBook book in availableBooks)
