@@ -8,7 +8,7 @@ using Business_Layer.Enums;
 
 namespace Business_Layer
 {
-    public class DataStore
+    public class DataStore : IDataStore
     {
         private IInventory inventory = null;
         private IList<IMember> members;
@@ -48,7 +48,7 @@ namespace Business_Layer
                 member = GetMemberNr(memberNr);
                 members.Add(member);
             }
-            return member;                                                            
+            return member;
         }
         public IBook GetBookWithIsbn(int isbn)
         {
@@ -105,7 +105,7 @@ namespace Business_Layer
                 if (!books.Contains(book))
                     books.Add(book);
             }
-            return ReservedBooks;            
+            return ReservedBooks;
         }
         public IBook GetBookFromISBN(int isbn)
         {

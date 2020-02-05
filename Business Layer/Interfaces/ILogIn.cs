@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business_Layer.Enums;
-using Business_Layer.Interfaces;
 
-namespace Business_Layer
+
+namespace Business_Layer.Interfaces
 {
     public interface ILogIn
     {
