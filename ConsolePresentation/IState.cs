@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsolePresentation
 {
-    class StateContext
+    interface IState
     {
+        void ShowMenu(IStateContext context);
     }
 }

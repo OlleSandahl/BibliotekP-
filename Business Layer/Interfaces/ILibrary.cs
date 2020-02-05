@@ -10,7 +10,7 @@ using Business_Layer.Exceptions;
 
 namespace Business_Layer.Interfaces
 {
-    interface ILibrary
+    public interface ILibrary
     {
         IList<IBook> GetAvailabeBooks();
         IBook GetBookFromISBN(int isbn);

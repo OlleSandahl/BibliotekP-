@@ -9,7 +9,7 @@ using Business_Layer.Exceptions;
 
 namespace Business_Layer
 {
-    class Library
+    public class Library
     {
         private IDataStore datastore = null;
 

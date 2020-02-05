@@ -20,6 +20,10 @@ namespace ConsolePresentation
 
             int choice;
             int.TryParse(Console.ReadLine(), out choice);
+            
+            switch (choice)
+            {
+            case
         }
     }
 }
