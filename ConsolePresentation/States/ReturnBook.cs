@@ -14,48 +14,44 @@ namespace ConsolePresentation
 {
     class ReturnBook : IState
     {
-        IList<IBook> books = new List<IBook>();
-        public void ShowMenu(IStateContext context)
+       public void ShowMeny(IStateContext context)
         {
             Console.Clear();
-            Console.WriteLine("Booking Book Menu \n");
+            Console.WriteLine("Return booking meny\n");
 
-            IList<IBook> availableBooks = context.Library.GetAvailabeBooks();
-            foreach (IBook book in availableBooks)
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("please input your bookingnumber: ");
+            int bookingNr;
+            int.TryParse(Console.ReadLine(), out bookingNr);
+            IList<IBook> books = context.Library.GetReservedBooks(bookingNr);
+
+            foreach (IBook book in books)
             {
-                Console.WriteLine($"ISBN: {book.ISBN}/tTitel: {book.Title}");
+                Console.WriteLine(" ");
+                Console.WriteLine($"Isbn: {book.ISBN}\tTitle {book.Title}");
             }
+            Console.WriteLine(" ");
+
+
+            Console.WriteLine("Please verify your bookingnumber to complete the return: ");
+            int.TryParse(Console.ReadLine(), out bookingNr);
+
+            IInvoice invoice = context.Library.ReturnBook(bookingNr);
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("Invoice");
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine("(0 = Finish booking)");
-            Console.WriteLine(" ");
-
-            int res = 0;
-            do
-            {
-                res = Convert.ToInt32(Console.ReadLine());
-                if (res != 0)
-                {
-                    IBook book = context.Library.GetBookFromISBN(res);
-                    books.Add(book);
-                    Console.WriteLine("The book with the ISBN; " + book.ISBN + " has been added your booking");
-                }
-            } while (res != 0);
-
-            Console.WriteLine(" ");
-            Console.WriteLine("Enter the membership number");
-            int memberNr;
-            int.TryParse(Console.ReadLine(), out memberNr);
-            int librarienNr = context.logIn.Librarian.LibrNr;
-
-            IBooking booking = context.Library.ReservBook(books, librarienNr, memberNr);
-
-            Console.WriteLine(" ");
-            Console.WriteLine("BookingNr: " + booking.BookingNr);
+            Console.WriteLine($"\nInvoicenumber: {invoice.InvoiceNr}\tPrice: {invoice.TotalPrice}" + " Swedish crones");
+            context.Library.ReturnBook(bookingNr);
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine("Press enter to get back to the main menu");
-            Console.WriteLine();
-
+            Console.WriteLine("Press enter to get to the start menu");
+            Console.ReadLine();
             context.SetState(new MainMenu());
+
+
+
         }
+
+       
     }
 }

@@ -23,7 +23,7 @@ namespace ConsolePresentation.states
             IList<IBook> availableBooks = context.Library.GetAvailabeBooks();
             foreach (IBook book in availableBooks)
             {
-                Console.WriteLine($"ISBN: {book.ISBN}/tTitel: {book.Title}");
+                Console.WriteLine($"ISBN: {book.ISBN}\tTitel: {book.Title}");
             }
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine("(0 = Finish booking)");
@@ -37,7 +37,7 @@ namespace ConsolePresentation.states
                 {
                     IBook book = context.Library.GetBookFromISBN(res);
                     books.Add(book);
-                    Console.WriteLine("The book with the ISBN; " + book.ISBN + " has been added your booking");
+                    Console.WriteLine("The book with the ISBN; " + book.ISBN + " has been added to your bookings");
                 }
             } while (res != 0);
 
