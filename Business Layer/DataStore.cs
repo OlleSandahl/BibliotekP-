@@ -8,7 +8,7 @@ using Business_Layer.Enums;
 
 namespace Business_Layer
 {
-    public class DataStore : IDataStore
+    public class DataStore
     {
         private IInventory inventory = null;
         private IList<IMember> members;
