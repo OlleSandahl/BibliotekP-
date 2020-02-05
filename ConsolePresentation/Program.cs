@@ -8,10 +8,12 @@ namespace ConsolePresentation
 {
     class Program
     {
-        
+        private static IStateContext context = null;
         static void Main(string[] args)
         {
-
+            context = new StateContext();
+            while (true)
+                context.ShowMenu();
         }
     }
 }

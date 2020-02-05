@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsolePresentation;
+using ConsolePresentation.interfaces;
 
-namespace ConsolePresentation
+namespace ConsolePresentation.interfaces
 {
-    interface IState
+    public interface IState
     {
         void ShowMenu(IStateContext context);
     }
