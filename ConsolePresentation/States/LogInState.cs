@@ -20,7 +20,7 @@ namespace ConsolePresentation.states
             while (context.logIn == null)
             {
                 Console.Clear();
-                Console.WriteLine("Bibliotek Logga In/n");
+                Console.WriteLine("Library Log-In/n");
 
 
             }

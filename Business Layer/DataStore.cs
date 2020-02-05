@@ -28,7 +28,7 @@ namespace Business_Layer
             Availabebooks = new List<IBook>();
             ReservedBooks = new List<IBook>();
             bookings = inventory.GetBookings();
-            invoices = inventory.GetInvoices();
+            invoices = inventory.GetInvoice();
         }
         public ILibrarian GetLibrarianNr(int libNr)
         {
@@ -65,7 +65,7 @@ namespace Business_Layer
         {
             ILibrarian librarian = GetLibrarianNr(libNr);
             IMember member = GetMemberNr(memberNr);
-            IBooking booking = inventory.ReservBook(books, librarian, member);
+            IBooking booking = inventory.ReserveBook(books, librarian, member);
             bookings.Add(booking);
             return booking;
         }
@@ -89,7 +89,7 @@ namespace Business_Layer
 
         public IList<IBook> GetAvailabeBooks()
         {
-            Availabebooks = inventory.GetAvailabeBooks();
+            Availabebooks = inventory.GetAvailableBooks();
             foreach (IBook book in Availabebooks)
             {
                 if (!books.Contains(book))
@@ -99,7 +99,7 @@ namespace Business_Layer
         }
         public IList<IBook> GetReservedBooks(int bookingNr)
         {
-            ReservedBooks = inventory.GetReservedBooks(bookingNr);
+            ReservedBooks = inventory.GetBooking(bookingNr);
             foreach (IBook book in ReservedBooks)
             {
                 if (!books.Contains(book))

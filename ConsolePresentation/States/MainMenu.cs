@@ -18,32 +18,29 @@ namespace ConsolePresentation.states
         {
             Console.Clear();
             Console.WriteLine("MainMenu\n");
-            Console.WriteLine("1. Boka bok");
-            Console.WriteLine("2. Återlämna bok");
-            Console.WriteLine("3. Ta bort bokning");
-            Console.WriteLine("4. Exit\n");
-            Console.Write("Val: ");
+            Console.WriteLine("1. Reserve book/s");
+            Console.WriteLine("2. Return book/s");
+            Console.WriteLine("3. Exit\n");
+            Console.Write("Choice: ");
 
             int choice;
             int.TryParse(Console.ReadLine(), out choice);
-            
+
             switch (choice)
             {
                 case 1:
                     context.SetState(new ReserveBookState());
                     break;
                 case 2:
-                    context.SetState(new ÅterlämnaBokState());
+                    context.SetState(new ReturnBook());
                     break;
                 case 3:
-                    context.SetState(new TaBortBokningState());
-                    break;
-                case 4:
                     Environment.Exit(0);
                     break;
                 default:
-                    context.SetState(new HuvudMenyState());
+                    context.SetState(new MainMenu());
                     break;
             }
+        }
     }
 }

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Interfaces\IStateContext.cs" />
+    <Compile Include="States\ReturnBook.cs" />
     <Compile Include="States\ReserveBookState.cs" />
     <Compile Include="States\LogInState.cs" />
     <Compile Include="StateContext.cs" />
